@@ -65,7 +65,7 @@ function ProgressCard({ userStudentDetails }) {
             exit={{ opacity: 0, translateX: -2000 }}
             transition={{ delay: 0.5 }}
         >
-            <h1 className="greet-student">Welcome {userStudentDetails['Student Name']}!</h1>
+            <h1 className="greet-student">Welcome!</h1>
             <div className="progress-bars-container">
                 {
                     milestones.map((milestone, id) => {
