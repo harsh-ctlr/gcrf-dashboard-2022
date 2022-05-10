@@ -4,57 +4,57 @@ import styled from 'styled-components';
 import Milestone from './Milestone';
 import StudentInfo from './StudentInfo';
 
-function ProgressCard({userStudentDetails}) {
+function ProgressCard({ userStudentDetails }) {
     let completedQuestBadges = parseInt(userStudentDetails["# of Quests Completed"])
     let completedSkillBadges = parseInt(userStudentDetails["# of Skill Badges Completed"])
-    let clamp = (val, min, max)  =>{
+    let clamp = (val, min, max) => {
         return val > max ? max : val < min ? min : val;
     }
     let milestones = [
         {
-            milestoneTitle: "Milestone #1 - Complete any 8 quests & 4 skill badges in the program",
-            milestoneCompletedQuestBadges: completedQuestBadges < 8 ? completedQuestBadges : 8,
-            milestoneCompletedSkillBadges: completedSkillBadges < 4 ? completedSkillBadges : 4,
-            hasMilestoneUnlocked: completedQuestBadges >= 8 && completedSkillBadges >=4 ? true : false,
-            milestoneProgressPercentage: clamp(((completedQuestBadges/8)+(completedSkillBadges/4))*50,0,100).toFixed(2),
-            maxQuestBadges: 8,
-            maxSkillBadges: 4,
+            milestoneTitle: "Milestone #1 - Complete any 10 quests & 5 skill badges in the program",
+            milestoneCompletedQuestBadges: completedQuestBadges < 10 ? completedQuestBadges : 10,
+            milestoneCompletedSkillBadges: completedSkillBadges < 5 ? completedSkillBadges : 5,
+            hasMilestoneUnlocked: completedQuestBadges >= 10 && completedSkillBadges >= 5 ? true : false,
+            milestoneProgressPercentage: clamp(((completedQuestBadges / 10) + (completedSkillBadges / 5)) * 50, 0, 100).toFixed(2),
+            maxQuestBadges: 10,
+            maxSkillBadges: 5,
             milestoneColor: "#4285F4",
-            completedText: "WOHOOO! WAY TO GO BUDDY! 🎉" 
+            completedText: "WOHOOO! WAY TO GO BUDDY! 🎉"
         },
         {
-            milestoneTitle: "Milestone #2 - Complete any 16 quests & 8 skill badges in the program",
-            milestoneCompletedQuestBadges: completedQuestBadges < 16 ? completedQuestBadges : 16,
-            milestoneCompletedSkillBadges: completedSkillBadges < 8 ? completedSkillBadges : 8,
-            hasMilestoneUnlocked: completedQuestBadges >= 16 && completedSkillBadges >=8 ? true : false,
-            milestoneProgressPercentage: clamp(((completedQuestBadges/16)+(completedSkillBadges/8))*50,0,100).toFixed(2),
-            maxQuestBadges: 16,
-            maxSkillBadges: 8,
+            milestoneTitle: "Milestone #2 - Complete any 20 quests & 10 skill badges in the program",
+            milestoneCompletedQuestBadges: completedQuestBadges < 20 ? completedQuestBadges : 20,
+            milestoneCompletedSkillBadges: completedSkillBadges < 10 ? completedSkillBadges : 10,
+            hasMilestoneUnlocked: completedQuestBadges >= 20 && completedSkillBadges >= 10 ? true : false,
+            milestoneProgressPercentage: clamp(((completedQuestBadges / 20) + (completedSkillBadges / 10)) * 50, 0, 100).toFixed(2),
+            maxQuestBadges: 20,
+            maxSkillBadges: 10,
             milestoneColor: "#FBBC05",
-            completedText: "Keep up the good work! 🔥" 
+            completedText: "Keep up the good work! 🔥"
         },
         {
-            milestoneTitle: "Milestone #3 - Complete any 24 quests & 12 skill badges in the program",
-            milestoneCompletedQuestBadges: completedQuestBadges < 24 ? completedQuestBadges : 24,
-            milestoneCompletedSkillBadges: completedSkillBadges < 12 ? completedSkillBadges : 12,
-            hasMilestoneUnlocked: completedQuestBadges >= 24 && completedSkillBadges >=12 ? true : false,
-            milestoneProgressPercentage: clamp(((completedQuestBadges/24)+(completedSkillBadges/12))*50,0,100).toFixed(2),
-            maxQuestBadges: 24,
-            maxSkillBadges: 12,
+            milestoneTitle: "Milestone #3 - Complete any 30 quests & 15 skill badges in the program",
+            milestoneCompletedQuestBadges: completedQuestBadges < 30 ? completedQuestBadges : 30,
+            milestoneCompletedSkillBadges: completedSkillBadges < 15 ? completedSkillBadges : 15,
+            hasMilestoneUnlocked: completedQuestBadges >= 30 && completedSkillBadges >= 15 ? true : false,
+            milestoneProgressPercentage: clamp(((completedQuestBadges / 30) + (completedSkillBadges / 15)) * 50, 0, 100).toFixed(2),
+            maxQuestBadges: 30,
+            maxSkillBadges: 15,
             milestoneColor: "#34A853",
-            completedText: "You are awesome! 🤩🔥" 
+            completedText: "You are awesome! 🤩🔥"
 
         },
         {
-            milestoneTitle: "Ultimate Milestone: Complete 30 Quests & all 15 Skill Badges",
-            milestoneCompletedQuestBadges: completedQuestBadges < 30 ? completedQuestBadges : 30,
-            milestoneCompletedSkillBadges: completedSkillBadges < 15 ? completedSkillBadges : 15,
-            hasMilestoneUnlocked: completedQuestBadges >= 30 && completedSkillBadges >=15 ? true : false,
-            milestoneProgressPercentage: clamp(((completedQuestBadges/30)+(completedSkillBadges/15))*50,0,100).toFixed(2),
-            maxQuestBadges: 30,
-            maxSkillBadges: 15,
+            milestoneTitle: "Ultimate Milestone: Complete 40 Quests & all 20 Skill Badges",
+            milestoneCompletedQuestBadges: completedQuestBadges < 40 ? completedQuestBadges : 40,
+            milestoneCompletedSkillBadges: completedSkillBadges < 20 ? completedSkillBadges : 20,
+            hasMilestoneUnlocked: completedQuestBadges >= 40 && completedSkillBadges >= 20 ? true : false,
+            milestoneProgressPercentage: clamp(((completedQuestBadges / 40) + (completedSkillBadges / 20)) * 50, 0, 100).toFixed(2),
+            maxQuestBadges: 40,
+            maxSkillBadges: 20,
             milestoneColor: "#EA4335",
-            completedText: "Congrats! You totally rock! 💯" 
+            completedText: "Congrats! You totally rock! 💯"
 
         }
     ]
@@ -68,8 +68,8 @@ function ProgressCard({userStudentDetails}) {
             <h1 className="greet-student">Welcome {userStudentDetails['Student Name']}!</h1>
             <div className="progress-bars-container">
                 {
-                    milestones.map((milestone,id) =>{
-                        return <Milestone 
+                    milestones.map((milestone, id) => {
+                        return <Milestone
                             key={id}
                             milestoneData={milestone}
                         />
